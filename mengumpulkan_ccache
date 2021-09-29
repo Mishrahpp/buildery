@@ -10,8 +10,10 @@ ccache -o compression=true
 ccache -z
 
 . build/envsetup.sh
-lunch nad_juice-userdebug
-mka nad -j8 &
+lunch xdroid_X01BD-userdebug
+export KBUILD_BUILD_USER=android # Change with your own name or else.
+export KBUILD_BUILD_HOST=mcrd1-19 # Change with your own hostname.
+make xd -j8 &
 sleep 90m
 kill %1
 ccache -s

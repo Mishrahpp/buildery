@@ -11,8 +11,8 @@ com ()
 time com ccache 1
 
 cd /tmp
-time rclone copy /tmp/rom/out/target/product/juice/Nusantara*.zip inok:juice -P
-cd /tmp/rom/out/target/product/juice/
-curl -s "https://api.telegram.org/bot${token_telegram}/sendmessage" --data "text=Download Link -> http://anu.inok189.workers.dev/juice/$(ls Nusantara*.zip)=${id_telegram}&parse_mode=html"
+time rclone copy /tmp/rom/out/target/product/X01BD/boot.img ramadhannangga:X01BD -P
+time rclone copy /tmp/rom/out/target/product/X01BD/xd_rev*.zip ramadhannangga:X01BD -P
+cd /tmp/rom/out/target/product/X01BD/
 cd /tmp
-time rclone copy ccache.tar.gz inok:nusantara -P
+time rclone copy ccache.tar.gz ramadhannangga:ccache -P
