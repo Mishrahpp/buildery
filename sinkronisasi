@@ -8,7 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # Required Sources
 git clone --depth=1 https://github.com/zephycprjkt/xd_device_asus_sdm660-common device/asus/sdm660-common
 git clone --depth=1 https://github.com/zephycprjkt/xd_device_asus_X01BD device/asus/X01BD
-git clone --depth=1 https://github.com/zephyclab/xd_kernel_asus_sdm660 --single-branch -b rebase-test kernel/asus/sdm660
+git clone --depth=1 https://github.com/ramadhannangga/android_kernel_qcom_sdm660 kernel/asus/sdm660
 git clone --depth=1 https://github.com/zephycprjkt/xd_vendor_asus vendor/asus
 git clone --depth=1 https://github.com/Gaurav241/packages_apps_GoogleCamera packages/apps/GoogleCam
 git clone --depth=1 https://github.com/P-404/proprietary_vendor_qcom_common vendor/qcom/common
