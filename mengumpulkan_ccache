@@ -18,6 +18,7 @@ export KBUILD_BUILD_USER=aesxily
 export KBUILD_BUILD_HOST=zepycloud
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta
+make xd -j$(nproc --all)
 sleep 90m
 kill %1
 ccache -s
