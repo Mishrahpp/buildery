@@ -14,5 +14,4 @@ git clone --depth=1 https://github.com/Gaurav241/packages_apps_GoogleCamera pack
 git clone --depth=1 https://github.com/P-404/proprietary_vendor_qcom_common vendor/qcom/common
 git clone --depth=1 https://github.com/P-404/android_device_qcom_common device/qcom/sdm660-common
 mv device/qcom/sdm660-common/* device/qcom/common/
-git clone --depth=1 https://gitlab.com/zephyc/clang prebuilts/clang/host/linux-x86/clang-Apocalypse
-
+echo "synchronization done"
