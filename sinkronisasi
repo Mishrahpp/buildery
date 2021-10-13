@@ -9,5 +9,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 git clone --depth=1 https://github.com/SeeAli/device_xiaomi_merlinx -b oss-bianca11 device/xiaomi/merlinx
 git clone --depth=1 https://github.com/SeeAli/Niki_Kernel kernel/xiaomi/mt6768
 git clone --depth=1 https://github.com/SeeAli/android_vendor_xiaomi_merlinx vendor/xiaomi/merlinx
+git clone --depth=1 https://github.com/XBIZART/device_mediatek_sepolicy_vndr device/mediatek/sepolicy_vndr
 git clone --depth=1 https://github.com/SeeAli/android_device_xiaomi_mt6768-common1 device/xiaomi/mt6768-common
 echo "synchronization done"
