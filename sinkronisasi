@@ -2,16 +2,13 @@
 
 cd /tmp/rom
 
-repo init -q --no-repo-verify --depth=1 -u git://github.com/xdroid-CAF/xd_manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
+repo init -q --no-repo-verify --depth=1 -u https://github.com/DirtyUnicorns/android_manifest.git -b r11x -g default,-device,-mips,-darwin,-notdefault
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # Required Sources
-git clone --depth=1 https://github.com/zephycprjkt/xd_device_asus_sdm660-common device/asus/sdm660-common
-git clone --depth=1 https://github.com/zephycprjkt/xd_device_asus_X01BD device/asus/X01BD
-git clone --depth=1 https://github.com/ramadhannangga/android_kernel_qcom_sdm660 kernel/asus/sdm660
-git clone --depth=1 https://github.com/zephycprjkt/xd_vendor_asus vendor/asus
-git clone --depth=1 https://github.com/Gaurav241/packages_apps_GoogleCamera packages/apps/GoogleCam
-git clone --depth=1 https://github.com/P-404/proprietary_vendor_qcom_common vendor/qcom/common
-git clone --depth=1 https://github.com/P-404/android_device_qcom_common device/qcom/sdm660-common
+git clone --depth=1 https://github.com/SeeAli/device_xiaomi_merlinx -b nad device/xiaomi/merlinx
+git clone --depth=1 https://github.com/SeeAli/Niki_Kernel kernel/xiaomi/mt6768
+git clone --depth=1 https://github.com/SeeAli/android_vendor_xiaomi_merlinx vendor/xiaomi/merlinx
+git clone --depth=1 https://github.com/SeeAli/android_device_xiaomi_mt6768-common1 device/xiaomi/mt6768-common
 mv device/qcom/sdm660-common/* device/qcom/common/
 echo "synchronization done"
