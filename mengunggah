@@ -11,7 +11,6 @@ com ()
 time com ccache 1
 
 cd /tmp
-time rclone copy /tmp/rom/out/target/product/X01BD/boot.img ramadhannangga:X01BD -P
 time rclone copy /tmp/rom/out/target/product/X01BD/xd_rev*.zip ramadhannangga:X01BD -P
 cd /tmp/rom/out/target/product/X01BD/
 cd /tmp
