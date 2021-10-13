@@ -10,5 +10,4 @@ git clone --depth=1 https://github.com/SeeAli/device_xiaomi_merlinx -b nad devic
 git clone --depth=1 https://github.com/SeeAli/Niki_Kernel kernel/xiaomi/mt6768
 git clone --depth=1 https://github.com/SeeAli/android_vendor_xiaomi_merlinx vendor/xiaomi/merlinx
 git clone --depth=1 https://github.com/SeeAli/android_device_xiaomi_mt6768-common1 device/xiaomi/mt6768-common
-mv device/qcom/sdm660-common/* device/qcom/common/
 echo "synchronization done"
