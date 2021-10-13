@@ -11,11 +11,11 @@ ccache -z
 
 . build/envsetup.sh
 lunch xdroid_X01BD-userdebug
-export BUILD_USERNAME=aesxily
+export BUILD_USERNAME=Slw
 export SKIP_ABI_CHECKS=true
 export SKIP_API_CHECKS=true
-export KBUILD_BUILD_USER=aesxily
-export KBUILD_BUILD_HOST=zepycloud
+export KBUILD_BUILD_USER=Slw
+export KBUILD_BUILD_HOST=SlwCloud
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta
 make xd -j$(nproc --all) &
