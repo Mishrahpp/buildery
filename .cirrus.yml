@@ -2,7 +2,7 @@ env:
     rclone_config: "ENCRYPTED[0a325321b5613e01fe6d5f55ec7045ec6c3be3fccf7204b97af5192d2a47b0497637942054e680071d73da64c8cd2c88]"
 
 task:
-    name: xdroid-caf
+    name: DirtyUnicorn
     timeout_in: 120m
     container:
       image: inok2341/anu:latest
