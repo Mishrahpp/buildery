@@ -11,7 +11,7 @@ ccache -z
 
 . build/envsetup.sh
 lunch xdroid_X01BD-userdebug
-export BUILD_USERNAME=aesxily
+export BUILD_USERNAME=Slw
 export SKIP_ABI_CHECKS=true
 export SKIP_API_CHECKS=true
 export KBUILD_BUILD_USER=Slw
