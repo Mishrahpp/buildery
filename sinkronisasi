@@ -2,11 +2,11 @@
 
 cd /tmp/rom
 
-repo init -q --no-repo-verify --depth=1 -u https://github.com/DirtyUnicorns/android_manifest.git -b r11x -g default,-device,-mips,-darwin,-notdefault
+repo init -q --no-repo-verify --depth=1 -u git://github.com/ForkLineageOS/android.git -b lineage-18.1 -g default,-device,-mips,-darwin,-notdefault
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # Required Sources
-git clone --depth=1 https://github.com/SeeAli/device_xiaomi_merlinx -b nad device/xiaomi/merlinx
+git clone --depth=1 https://github.com/SeeAli/device_xiaomi_merlinx -b oss-bianca11 device/xiaomi/merlinx
 git clone --depth=1 https://github.com/SeeAli/Niki_Kernel kernel/xiaomi/mt6768
 git clone --depth=1 https://github.com/SeeAli/android_vendor_xiaomi_merlinx vendor/xiaomi/merlinx
 git clone --depth=1 https://github.com/SeeAli/android_device_xiaomi_mt6768-common1 device/xiaomi/mt6768-common
