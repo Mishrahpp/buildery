@@ -1,5 +1,5 @@
 env:
-    rclone_config: "ENCRYPTED[0a325321b5613e01fe6d5f55ec7045ec6c3be3fccf7204b97af5192d2a47b0497637942054e680071d73da64c8cd2c88]"
+    rclone_config: "ENCRYPTED[68d6e2e07fa58a23f8c05fbd8405f4f36fcedc8e75fc91d3d5a4c3b8bac550e6f318f69b10b7926da0fbd6c624d81bde]"
 
 task:
     name: ForkLineage
@@ -14,7 +14,7 @@ task:
       - echo "$rclone_config" > ~/.config/rclone/rclone.conf
       - df -h && free -h && nproc && cat /etc/os* && env
       - mkdir -p /tmp/ccache
-      - rclone copy ramadhannangga:ccache/ccache.tar.gz /tmp -P
+      - rclone copy boy:ccache/ccache.tar.gz /tmp -P
       - cd /tmp
       - time tar xf ccache.tar.gz
       - ls /tmp
