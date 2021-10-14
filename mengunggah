@@ -11,7 +11,7 @@ com ()
 time com ccache 1
 
 cd /tmp
-time rclone copy /tmp/rom/out/target/product/X01BD/xd_rev*.zip ramadhannangga:X01BD -P
-cd /tmp/rom/out/target/product/X01BD/
+time rclone copy /tmp/rom/out/target/product/merlinx/lineage*.zip ramadhannangga:merlinx -P
+cd /tmp/rom/out/target/product/merlinx/
 cd /tmp
 time rclone copy ccache.tar.gz ramadhannangga:ccache -P
