@@ -14,7 +14,7 @@ task:
       - echo "$rclone_config" > ~/.config/rclone/rclone.conf
       - df -h && free -h && nproc && cat /etc/os* && env
       - mkdir -p /tmp/ccache
-      - rclone copy boy:ccache/ccache.tar.gz /tmp -P
+      - rclone copy lo:ccache/ccache.tar.gz /tmp -P
       - cd /tmp
       - time tar xf ccache.tar.gz
       - ls /tmp
