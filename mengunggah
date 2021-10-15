@@ -1,6 +1,11 @@
 #!/bin/bash
 
+# Upload ROM
+cd /tmp
+time rclone copy /tmp/rom/out/target/product/merlin/lineage*.zip lo:merlinx -P
+cd /tmp/rom/out/target/product/merlinx/
 
+# Upload ccache
 cd /tmp
 
 com () 
@@ -10,8 +15,5 @@ com ()
 
 time com ccache 1
 
-cd /tmp
-time rclone copy /tmp/rom/out/target/product/merlinx/lineage*.zip lo:merlinx -P
-cd /tmp/rom/out/target/product/merlinx/
 cd /tmp
 time rclone copy ccache.tar.gz lo:ccache -P
