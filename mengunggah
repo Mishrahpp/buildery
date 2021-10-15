@@ -11,7 +11,7 @@ com ()
 time com ccache 1
 
 cd /tmp
-time rclone copy /tmp/rom/out/target/product/merlinx/lineage*.zip boy:merlinx -P
+time rclone copy /tmp/rom/out/target/product/merlinx/lineage*.zip lo:merlinx -P
 cd /tmp/rom/out/target/product/merlinx/
 cd /tmp
-time rclone copy ccache.tar.gz boy:ccache -P
+time rclone copy ccache.tar.gz lo:ccache -P
