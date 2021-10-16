@@ -2,13 +2,13 @@
 
 cd /tmp/rom
 
-repo init -q --no-repo-verify --depth=1 -u git://github.com/ForkLineageOS/android.git -b lineage-18.1 -g default,-device,-mips,-darwin,-notdefault
-repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
+repo init -q --no-repo-verify --depth=1 -u https://github.com/ProjectRadiant/manifest -b eleven -g default,-device,-mips,-darwin,-notdefault
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # Required Sources
-git clone --depth=1 https://github.com/SeeAli/android_device_xiaomi_merlinx device/xiaomi/merlinx
+git clone --depth=1 https://github.com/SeeAli/android_device_xiaomi_merlinx -b eleven device/xiaomi/merlinx
 git clone --depth=1 https://github.com/SeeAli/vendor_xiaomi_merlinx vendor/xiaomi/merlinx
 git clone --depth=1 https://github.com/SeeAli/device_mediatek_sepolicy_vndr device/mediatek/sepolicy_vndr
-git clone --depth=1 https://github.com/SeeAli/android_device_xiaomi_mt6768-common device/xiaomi/mt6768-common
+git clone --depth=1 https://github.com/SeeAli/android_device_xiaomi_mt6768-common -b eleven device/xiaomi/mt6768-common
 git clone --depth=1 https://github.com/SeeAli/Niki_Kernel kernel/xiaomi/mt6768
 echo "synchronization done"
