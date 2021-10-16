@@ -2,8 +2,8 @@
 
 cd /tmp/rom
 
-repo init -q --no-repo-verify --depth=1 -u git://github.com/ForkLineageOS/android.git -b lineage-18.1 -g default,-device,-mips,-darwin,-notdefault
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo init -u --depth=1 git://github.com/ForkLineageOS/android.git -b lineage-18.1
+repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 
 # Required Sources
 git clone --depth=1 https://github.com/SeeAli/android_device_xiaomi_merlinx device/xiaomi/merlinx
