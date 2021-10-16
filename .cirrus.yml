@@ -31,7 +31,7 @@ task:
     memantau_background_script:
       - ./memantau
     mengsinkronisasi_script:
-       - ./sinkronisasi
+      - ./sinkronisasi
    mengumpulkan_ccache_script:
       - ./mengumpulkan_ccache
 #   membangun_akhir_script:
