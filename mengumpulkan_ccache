@@ -19,6 +19,6 @@ export KBUILD_BUILD_HOST=SlwCloud
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta
 mka bacon -j8 &
-sleep 90m
+sleep 85m
 kill %1
 ccache -s
