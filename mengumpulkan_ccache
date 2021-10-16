@@ -10,7 +10,7 @@ ccache -o compression=true
 ccache -z
 
 . build/envsetup.sh
-lunch lineage_merlinx-userdebug
+lunch radiant_merlinx-userdebug
 export BUILD_USERNAME=Slw
 export SKIP_ABI_CHECKS=true
 export SKIP_API_CHECKS=true
@@ -18,7 +18,7 @@ export KBUILD_BUILD_USER=Slw
 export KBUILD_BUILD_HOST=SlwCloud
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta
-make bacon -j$(nproc --all) &
+mka bacon -j8
 sleep 90m
 kill %1
 ccache -s
