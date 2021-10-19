@@ -2,7 +2,7 @@ env:
     rclone_config: "ENCRYPTED[68d6e2e07fa58a23f8c05fbd8405f4f36fcedc8e75fc91d3d5a4c3b8bac550e6f318f69b10b7926da0fbd6c624d81bde]"
 
 task:
-    name: Radiant
+    name: lineage
     timeout_in: 120m
     container:
       image: inok2341/anu:latest
