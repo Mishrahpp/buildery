@@ -2,7 +2,7 @@
 
 # Upload ROM
 cd /tmp
-time rclone copy /tmp/rom/out/target/product/merlinx/legion-v3.14*.zip lo:merlinx -P
+time rclone copy /tmp/rom/out/target/product/merlinx/lLegionOS-v3.14-merlinx*.zip lo:merlinx -P
 cd /tmp/rom/out/target/product/merlinx/
 
 # Upload ccache
