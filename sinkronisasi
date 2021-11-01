@@ -3,7 +3,7 @@
 cd /tmp/rom
 
 repo init -q --no-repo-verify --depth=1 -u https://github.com/ArcaneOS/Arcane_manifest -b R -g default,-device,-mips,-darwin,-notdefault
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # Required Sources
 git clone --depth=1 https://github.com/Asyanx/android_device_xiaomi_merlinx -b eleven device/xiaomi/merlinx
