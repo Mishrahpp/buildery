@@ -6,9 +6,10 @@ repo init -q --no-repo-verify --depth=1 -u https://github.com/ArcaneOS/Arcane_ma
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # Required Sources
+git clone --depth=1 https://github.com/ArcaneOS/build vendor/aosp/build
 git clone --depth=1 https://github.com/Asyanx/android_device_xiaomi_merlinx -b eleven device/xiaomi/merlinx
 git clone --depth=1 https://github.com/Asyanx/android_vendor_xiaomi_merlinx vendor/xiaomi/merlinx
-git clone --depth=1 https://github.com/Asyanx/device_mediatek_sepolicy_vndr device/mediatek/sepolicy_vndr
 git clone --depth=1 https://github.com/Asyanx/android_device_xiaomi_mt6768-common -b eleven device/xiaomi/mt6768-common
+git clone --depth=1 https://github.com/Asyanx/device_mediatek_sepolicy_vndr device/mediatek/sepolicy_vndr
 git clone --depth=1 https://github.com/Asyanx/Niki_Kernel kernel/xiaomi/mt6768
 echo "synchronization done"
