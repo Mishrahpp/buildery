@@ -10,7 +10,7 @@ ccache -o compression=true
 ccache -z
 
 . build/envsetup.sh
-lunch hentai_merlinx-user
+lunch hentai_merlinx-eng
 export BUILD_USERNAME=Slw
 export SKIP_ABI_CHECKS=true
 export SKIP_API_CHECKS=true
