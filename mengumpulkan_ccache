@@ -10,15 +10,15 @@ ccache -o compression=true
 ccache -z
 
 . build/envsetup.sh
-lunch du_merlinx-user
+lunch aosp_merlinx-user
 export BUILD_USERNAME=Asyanx
 export SKIP_ABI_CHECKS=true
 export SKIP_API_CHECKS=true
-export KBUILD_BUILD_USER=Slw
+export KBUILD_BUILD_USER=Asyanx
 export KBUILD_BUILD_HOST=SlwCloud
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta
-mka bacon &
+m aex -j$(nproc --all) &
 sleep 90m
 kill %1
 ccache -s
