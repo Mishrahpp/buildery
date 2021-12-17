@@ -1,46 +1,38 @@
 env:
-    rclone: "ENCRYPTED[68d6e2e07fa58a23f8c05fbd8405f4f36fcedc8e75fc91d3d5a4c3b8bac550e6f318f69b10b7926da0fbd6c624d81bde]"
+    rcloneconfig: "ENCRYPTED[68d6e2e07fa58a23f8c05fbd8405f4f36fcedc8e75fc91d3d5a4c3b8bac550e6f318f69b10b7926da0fbd6c624d81bde]"
 
 task:
-    name: "Setting Up, Syncing, Building and Uploading..."
-    timeout_in: 120m
-    container:
+  name: "Setting Up, Syncing, Building and Uploading..."
+  timeout_in: 480m  
+  container:
       image: inok2341/anu:latest
       cpu: 8
-      memory: 32G      
-
-    mengunduh_ccache_background_script:
-      - export DEBIAN_FRONTEND=noninteractive
-      - apt update
-      - apt install sudo
-      - mkdir -p ~/.config/rclone
-      - echo "$rclone" > ~/.config/rclone/rclone.conf
-      - df -h && free -h && nproc && cat /etc/os* && env
-      - DEBIAN_FRONTEND=noninteractive
-      - sudo apt install python3 -y
-      - sudo ln -sf /usr/bin/python3 /usr/bin/python
-      - git config --global user.name "Asyanx"
-      - git config --global user.email "wowsanja2@gmail.com"
-      - mkdir -p /tmp/ccache
-      - rclone copy lo:ccache/ccache.tar.gz /tmp -P
-      - cd /tmp
-      - time tar xf ccache.tar.gz
-      - ls /tmp
-      - ls /tmp/ccache
-      - rm -rf ccache.tar.gz
-      - mkdir -p /tmp/rom
-      - cd /tmp/rom
-      - export CCACHE_DIR=/tmp/ccache
-      - export CCACHE_EXEC=$(which ccache)
-      - export USE_CCACHE=1
-      - ccache -M 20G
-      - ccache -o compression=true
-      - ccache -z
-    
-    memantau_background_script:
-      - ./memantau
-
-    Sync_script:
+      memory: 32G
+        
+  Build-Env-Setup_background_script:
+       - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Setup Build"
+       - export DEBIAN_FRONTEND=noninteractive
+       - apt update
+       - apt install sudo
+       - mkdir -p ~/.config/rclone
+       - echo "$rcloneconfig" > ~/.config/rclone/rclone.conf
+       - DEBIAN_FRONTEND=noninteractive
+       - sudo apt install python3 -y
+       - sudo ln -sf /usr/bin/python3 /usr/bin/python
+       - git config --global user.name "Asyanx"
+       - git config --global user.email "wowsanja2@gmail.com"
+       - mkdir -p /tmp/ccache
+       - rclone copy lo:ccache/ccache.tar.gz /tmp -P
+       - cd /tmp
+       - time tar xf ccache.tar.gz
+       - cd /tmp
+  
+  Storage-Checker_background_script:
+      - df -h
+      - lsblk
+      - ls -l -a -h
+   
+  Sync_script:
       - echo "============================"
       - echo "Syncing The Sources..."
       - echo "============================"
@@ -57,9 +49,33 @@ task:
       - echo "Sync Completed!"
       - echo "============================"
 
-#    mengumpulkan_ccache_script:
-#      - ./mengumpulkan_ccache
-    membangun_akhir_script:
-      - ./membangun_akhir
-    mengunggah_script:
-      - ./mengunggah
+  Build_script:
+      - echo "============================"
+      - echo "Starting the Build..."
+      - echo "============================"
+      - cd /tmp/rom
+      - export CCACHE_DIR=/tmp/ccache
+      - export CCACHE_EXEC=$(which ccache)
+      - export USE_CCACHE=1
+      - ccache -M 20G
+      - ccache -o compression=true
+      - ccache -z
+      - source build/envsetup.sh > /dev/null 2>&1
+      - lunch aosp_merlinx-userdebug > /dev/null 2>&1
+      - mka bacon -j8
+      - echo "============================"
+      - echo "Build Completed!"
+      - echo "============================"
+
+  Upload_script:
+      - echo "============================"
+      - echo "Uploading the Build...."
+      - echo "============================"
+      - rclone copy /tmp/rom/out/target/product/juice/PixelExperience*.zip lo:merlinx -P
+      - ./ziping.sh
+      - cd /tmp
+      - rclone copy ccache.tar.gz ccache -P
+      - echo " "
+      - echo "============================"
+      - echo "Build Uploaded Successfully!"
+      - echo "============================"
