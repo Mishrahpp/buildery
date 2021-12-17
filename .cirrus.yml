@@ -1,8 +1,8 @@
 env:
-    rclone_config: "ENCRYPTED[68d6e2e07fa58a23f8c05fbd8405f4f36fcedc8e75fc91d3d5a4c3b8bac550e6f318f69b10b7926da0fbd6c624d81bde]"
+    rclone: "ENCRYPTED[68d6e2e07fa58a23f8c05fbd8405f4f36fcedc8e75fc91d3d5a4c3b8bac550e6f318f69b10b7926da0fbd6c624d81bde]"
 
 task:
-    name: Arcane
+    name: "Setting Up, Syncing, Building and Uploading..."
     timeout_in: 120m
     container:
       image: inok2341/anu:latest
@@ -10,9 +10,17 @@ task:
       memory: 32G      
 
     mengunduh_ccache_background_script:
+      - export DEBIAN_FRONTEND=noninteractive
+      - apt update
+      - apt install sudo
       - mkdir -p ~/.config/rclone
-      - echo "$rclone_config" > ~/.config/rclone/rclone.conf
+      - echo "$rclone" > ~/.config/rclone/rclone.conf
       - df -h && free -h && nproc && cat /etc/os* && env
+      - DEBIAN_FRONTEND=noninteractive
+      - sudo apt install python3 -y
+      - sudo ln -sf /usr/bin/python3 /usr/bin/python
+      - git config --global user.name "Asyanx"
+      - git config --global user.email "wowsanja2@gmail.com"
       - mkdir -p /tmp/ccache
       - rclone copy lo:ccache/ccache.tar.gz /tmp -P
       - cd /tmp
